@@ -1,0 +1,12 @@
+--- # target file
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks: 
+        - name: install httpd
+          action: service name=httpd state=installed
+          notify: restart httpd
+  handlers: 
+           - name: restart httpd
+             action: service name=httpd state=restarted
