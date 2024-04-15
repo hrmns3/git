@@ -1,0 +1,17 @@
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: p1
+  annotations: 
+    description: my first pod
+spec:
+  containers:
+    - name: c1
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello; sleep 5 ; done"]
+      env:        #List of environment var to be used inside the pod
+    -   name: MYNAME
+        value: HARMAN
+  restartPolicy: Never  # Defaults to Always
+

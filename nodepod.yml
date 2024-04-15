@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: tp1
+spec:
+  containers:
+    - name: no1
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo welcome; sleep 5 ; done"]
+    - name: no2
+      image: httpd
+      ports:
+       - containerPort: 80
